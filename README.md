@@ -22,9 +22,6 @@ El proyecto integra **Supabase** como backend para almacenamiento de datos en la
 - **Flutter**: Framework multiplataforma  
 - **Dart**: Lenguaje de programación  
 - **Supabase**: Backend (PostgreSQL + API REST)  
-- **GetIt**: Inyección de dependencias  
-- **BLoC**: Gestión de estado  
-- **Dartz**: Manejo funcional de errores  
 
 ---
 
@@ -33,7 +30,6 @@ El proyecto integra **Supabase** como backend para almacenamiento de datos en la
 Ejecuta el siguiente SQL en el **SQL Editor** de Supabase para crear la tabla principal:
 
 ```sql
--- Crear la tabla activities
 create table if not exists activities (
   id uuid primary key default uuid_generate_v4(),
   type text not null,
@@ -41,13 +37,10 @@ create table if not exists activities (
   date timestamp with time zone default now()
 );
 
--- Índices
 create index if not exists idx_activities_type on activities(type);
 create index if not exists idx_activities_date on activities(date);
 
--- Activar Row Level Security
 alter table activities enable row level security;
 
--- Políticas básicas (puedes ajustarlas según la seguridad deseada)
 create policy "Allow select" on activities for select using (true);
 create policy "Allow insert" on activities for insert with check (true);
