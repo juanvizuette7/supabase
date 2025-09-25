@@ -1,0 +1,43 @@
+name: ecotrack
+description: Aplicación móvil para calcular y gestionar la huella de carbono personal.
+
+# No se publicará en pub.dev
+publish_to: 'none'
+
+# Versión de la app
+version: 1.0.0+1
+
+# 🔹 SDK compatible
+environment:
+  sdk: '>=3.9.0 <4.0.0'
+
+# 📦 Dependencias principales
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Íconos iOS
+  cupertino_icons: ^1.0.2
+
+  # Gestión de estado (BLoC)
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.7
+
+  # Inyección de dependencias
+  get_it: ^7.7.0
+
+  # Conexión con Supabase
+  supabase_flutter: ^2.10.1
+
+  # Programación funcional (manejo de errores)
+  dartz: ^0.10.1
+
+# 📦 Dependencias de desarrollo
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+# 📂 Configuración de Flutter
+flutter:
+  uses-material-design: true
